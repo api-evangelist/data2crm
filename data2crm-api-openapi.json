@@ -1,0 +1,5008 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1",
+        "title": "Data2CRM.API",
+        "description": "<p>Make use of our in-depth documentation to get more information about the various functions of the service. Those willing to explore the mechanics of Data2CRM.API can test it in live regime using the short code samples.<\/p><p>Select CRM: <span id=\"docs-select-crm\" style=\"font-weight: bold\">Loading... please wait<\/span><\/p><p>Here are the API access keys:<br><b>X-API2CRM-USERKEY<\/b>: <span id=\"docs-user-key\">e2a6379ab878ae7e58119d4ec842bf9c926e05b5<\/span><br><b>X-API2CRM-CRMKEY<\/b>: <span id=\"docs-crm-key\">7ae5b17008fb414d84981191cf3b66a476ef8bef<\/span><\/p><p id=\"docs-crm-access\">The CRM access details are:<br><b>URL<\/b>: <a id=\"docs-crm-url\" href=\"https:\/\/login.salesforce.com\/\" target=\"_blank\">https:\/\/login.salesforce.com\/<\/a><br><b>E-mail \/ Username<\/b>: <span id=\"docs-crm-username\">developers.data2crm.api+1@magneticone.com<\/span><br><b>Password<\/b>: <span id=\"docs-crm-password\">data2crmapi123<\/span><\/p>",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httpsapi.data2crm.com:80\/v1",
+        "http:\/\/api.data2crm.com:80\/v1"
+    ],
+    "paths": {
+        "\/account": {
+            "get": {
+                "summary": "GET for Account",
+                "description": "Returns all accounts from the system",
+                "operationId": "GetAccountCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Amount of results (default: 25)"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Start from record (default: 0)"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "Filter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "summary": "POST for Account",
+                "description": "Add account into the system",
+                "operationId": "CreateAccountEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/account\/count": {
+            "get": {
+                "summary": "COUNT for Account",
+                "description": "Count all accounts from the system",
+                "operationId": "GetAccountCountCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/account\/describe": {
+            "get": {
+                "summary": "DESCRIBE for Account",
+                "description": "Returns describe for accounts",
+                "operationId": "GetAccountDescribe",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/account\/{account_id}": {
+            "delete": {
+                "summary": "DELETE for Account",
+                "description": "Delete account information",
+                "operationId": "DeleteAccountEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "Account Identifier"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "GET for Account",
+                "description": "Return account information",
+                "operationId": "GetAccountEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "Account Identifier"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "PUT for Account",
+                "description": "Update account information",
+                "operationId": "UpdateAccountEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "Account Identifier"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/attachment": {
+            "get": {
+                "summary": "GET for Attachment",
+                "description": "Returns all attachments from the system",
+                "operationId": "GetAttachmentCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Amount of results (default: 25)"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Start from record (default: 0)"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "Filter"
+                    },
+                    {
+                        "name": "parent_type",
+                        "in": "query",
+                        "description": "Parent Type"
+                    },
+                    {
+                        "name": "parent_id",
+                        "in": "query",
+                        "description": "Parent Identifier"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "POST for Attachment",
+                "description": "Add attachment into the system",
+                "operationId": "CreateAttachmentEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/attachment\/count": {
+            "get": {
+                "summary": "COUNT for Attachment",
+                "description": "Count all attachments from the system",
+                "operationId": "GetAttachmentCountCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/attachment\/describe": {
+            "get": {
+                "summary": "DESCRIBE for Attachment",
+                "description": "Returns describe for attachments",
+                "operationId": "GetAttachmentDescribe",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/attachment\/{attachment_id}": {
+            "delete": {
+                "summary": "DELETE for Attachment",
+                "description": "Delete attachment information",
+                "operationId": "DeleteAttachmentEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "attachment_id",
+                        "in": "path",
+                        "description": "Attachment Identifier"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "GET for Attachment",
+                "description": "Return attachment information",
+                "operationId": "GetAttachmentEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "attachment_id",
+                        "in": "path",
+                        "description": "Attachment Identifier"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "PUT for Attachment",
+                "description": "Update attachment information",
+                "operationId": "UpdateAttachmentEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "attachment_id",
+                        "in": "path",
+                        "description": "Attachment Identifier"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/call": {
+            "get": {
+                "summary": "GET for Call",
+                "description": "Returns all calls from the system",
+                "operationId": "GetCallCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Amount of results (default: 25)"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Start from record (default: 0)"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "Filter"
+                    },
+                    {
+                        "name": "parent_type",
+                        "in": "query",
+                        "description": "Parent Type"
+                    },
+                    {
+                        "name": "parent_id",
+                        "in": "query",
+                        "description": "Parent Identifier"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "POST for Call",
+                "description": "Add call into the system",
+                "operationId": "CreateCallEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/call\/count": {
+            "get": {
+                "summary": "COUNT for Call",
+                "description": "Count all calls from the system",
+                "operationId": "GetCallCountCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/call\/describe": {
+            "get": {
+                "summary": "DESCRIBE for Call",
+                "description": "Returns describe for calls",
+                "operationId": "GetCallDescribe",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/call\/{call_id}": {
+            "delete": {
+                "summary": "DELETE for Call",
+                "description": "Delete call information",
+                "operationId": "DeleteCallEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "call_id",
+                        "in": "path",
+                        "description": "Call Identifier"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "GET for Call",
+                "description": "Return call information",
+                "operationId": "GetCallEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "call_id",
+                        "in": "path",
+                        "description": "Call Identifier"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "PUT for Call",
+                "description": "Update call information",
+                "operationId": "UpdateCallEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "call_id",
+                        "in": "path",
+                        "description": "Call Identifier"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/contact": {
+            "get": {
+                "summary": "GET for Contact",
+                "description": "Returns all contacts from the system",
+                "operationId": "GetContactCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Amount of results (default: 25)"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Start from record (default: 0)"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "Filter"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "POST for Contact",
+                "description": "Add contact into the system",
+                "operationId": "CreateContactEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/contact\/count": {
+            "get": {
+                "summary": "COUNT for Contact",
+                "description": "Count all contacts from the system",
+                "operationId": "GetContactCountCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/contact\/describe": {
+            "get": {
+                "summary": "DESCRIBE for Contact",
+                "description": "Returns describe for contacts",
+                "operationId": "GetContactDescribe",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/contact\/{contact_id}": {
+            "delete": {
+                "summary": "DELETE for Contact",
+                "description": "Delete contact information",
+                "operationId": "DeleteContactEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "contact_id",
+                        "in": "path",
+                        "description": "Contact Identifier"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "GET for Contact",
+                "description": "Return contact information",
+                "operationId": "GetContactEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "contact_id",
+                        "in": "path",
+                        "description": "Contact Identifier"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "PUT for Contact",
+                "description": "Update contact information",
+                "operationId": "UpdateContactEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "contact_id",
+                        "in": "path",
+                        "description": "Contact Identifier"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/crm": {
+            "get": {
+                "summary": "GET for Crm",
+                "description": "Returns all CRMs from the system",
+                "operationId": "GetCrmCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Amount of results (default: 25)"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Start from record (default: 0)"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "Filter"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Type"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "POST for Crm",
+                "description": "Add CRM into the systemWhat do I need to connect a CRM to Data2CRM.API?",
+                "operationId": "CreateCrmEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/crm\/count": {
+            "get": {
+                "summary": "COUNT for Crm",
+                "description": "Count all CRMs from the system",
+                "operationId": "GetCrmCountCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/crm\/{crm_id}": {
+            "delete": {
+                "summary": "DELETE for Crm",
+                "description": "Delete CRM information",
+                "operationId": "DeleteCrmEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "crm_id",
+                        "in": "path",
+                        "description": "CRM Identifier"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "GET for Crm",
+                "description": "Return CRM information",
+                "operationId": "GetCrmEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "crm_id",
+                        "in": "path",
+                        "description": "CRM Identifier"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "PUT for Crm",
+                "description": "Update CRM informationWhat do I need to connect a CRM to Data2CRM.API?",
+                "operationId": "UpdateCrmEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "crm_id",
+                        "in": "path",
+                        "description": "CRM Identifier"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/customField": {
+            "get": {
+                "summary": "GET for CustomField",
+                "description": "Returns all custom field from the system",
+                "operationId": "GetCustomFieldCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Amount of results (default: 25)"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Start from record (default: 0)"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "Filter"
+                    },
+                    {
+                        "name": "entity",
+                        "in": "query",
+                        "description": "Entity"
+                    },
+                    {
+                        "name": "label",
+                        "in": "query",
+                        "description": "Label"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Name"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "POST for CustomField",
+                "description": "Add custom field into the system",
+                "operationId": "CreateCustomFieldEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/customField\/{custom_field_id}": {
+            "delete": {
+                "summary": "DELETE for CustomField",
+                "description": "Delete custom field information",
+                "operationId": "DeleteCustomFieldEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "custom_field_id",
+                        "in": "path",
+                        "description": "Custom Field Identifier"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "GET for CustomField",
+                "description": "Return custom field information",
+                "operationId": "GetCustomFieldEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "custom_field_id",
+                        "in": "path",
+                        "description": "Custom Field Identifier"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "PUT for CustomField",
+                "description": "Update custom field information",
+                "operationId": "UpdateCustomFieldEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "custom_field_id",
+                        "in": "path",
+                        "description": "Custom Field Identifier"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/email": {
+            "get": {
+                "summary": "GET for Email",
+                "description": "Returns all emails from the system",
+                "operationId": "GetEmailCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Amount of results (default: 25)"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Start from record (default: 0)"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "Filter"
+                    },
+                    {
+                        "name": "parent_type",
+                        "in": "query",
+                        "description": "Parent Type"
+                    },
+                    {
+                        "name": "parent_id",
+                        "in": "query",
+                        "description": "Parent Identifier"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "POST for Email",
+                "description": "Add email into the system",
+                "operationId": "CreateEmailEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/email\/count": {
+            "get": {
+                "summary": "COUNT for Email",
+                "description": "Count all emails from the system",
+                "operationId": "GetEmailCountCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/email\/describe": {
+            "get": {
+                "summary": "DESCRIBE for Email",
+                "description": "Returns describe for emails",
+                "operationId": "GetEmailDescribe",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/email\/{email_id}": {
+            "delete": {
+                "summary": "DELETE for Email",
+                "description": "Delete email information",
+                "operationId": "DeleteEmailEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "email_id",
+                        "in": "path",
+                        "description": "Email Identifier"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "GET for Email",
+                "description": "Return email information",
+                "operationId": "GetEmailEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "email_id",
+                        "in": "path",
+                        "description": "Email Identifier"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "PUT for Email",
+                "description": "Update email information",
+                "operationId": "UpdateEmailEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "email_id",
+                        "in": "path",
+                        "description": "Email Identifier"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/event": {
+            "get": {
+                "summary": "GET for Event",
+                "description": "Returns all events from the system",
+                "operationId": "GetEventCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Amount of results (default: 25)"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Start from record (default: 0)"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "Filter"
+                    },
+                    {
+                        "name": "parent_type",
+                        "in": "query",
+                        "description": "Parent Type"
+                    },
+                    {
+                        "name": "parent_id",
+                        "in": "query",
+                        "description": "Parent Identifier"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "POST for Event",
+                "description": "Add event into the system",
+                "operationId": "CreateEventEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/event\/count": {
+            "get": {
+                "summary": "COUNT for Event",
+                "description": "Count all events from the system",
+                "operationId": "GetEventCountCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/event\/describe": {
+            "get": {
+                "summary": "DESCRIBE for Event",
+                "description": "Returns describe for events",
+                "operationId": "GetEventDescribe",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/event\/{event_id}": {
+            "delete": {
+                "summary": "DELETE for Event",
+                "description": "Delete event information",
+                "operationId": "DeleteEventEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "event_id",
+                        "in": "path",
+                        "description": "Event Identifier"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "GET for Event",
+                "description": "Return event information",
+                "operationId": "GetEventEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "event_id",
+                        "in": "path",
+                        "description": "Event Identifier"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "PUT for Event",
+                "description": "Update event information",
+                "operationId": "UpdateEventEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "event_id",
+                        "in": "path",
+                        "description": "Event Identifier"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/lead": {
+            "get": {
+                "summary": "GET for Lead",
+                "description": "Returns all leads from the system",
+                "operationId": "GetLeadCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Amount of results (default: 25)"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Start from record (default: 0)"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "Filter"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "POST for Lead",
+                "description": "Add lead into the system",
+                "operationId": "CreateLeadEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/lead\/count": {
+            "get": {
+                "summary": "COUNT for Lead",
+                "description": "Count all leads from the system",
+                "operationId": "GetLeadCountCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/lead\/describe": {
+            "get": {
+                "summary": "DESCRIBE for Lead",
+                "description": "Returns describe for leads",
+                "operationId": "GetLeadDescribe",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/lead\/{lead_id}": {
+            "delete": {
+                "summary": "DELETE for Lead",
+                "description": "Delete lead information",
+                "operationId": "DeleteLeadEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "lead_id",
+                        "in": "path",
+                        "description": "Lead Identifier"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "GET for Lead",
+                "description": "Return lead information",
+                "operationId": "GetLeadEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "lead_id",
+                        "in": "path",
+                        "description": "Lead Identifier"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "PUT for Lead",
+                "description": "Update lead information",
+                "operationId": "UpdateLeadEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "lead_id",
+                        "in": "path",
+                        "description": "Lead Identifier"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/meeting": {
+            "get": {
+                "summary": "GET for Meeting",
+                "description": "Returns all meetings from the system",
+                "operationId": "GetMeetingCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Amount of results (default: 25)"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Start from record (default: 0)"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "Filter"
+                    },
+                    {
+                        "name": "parent_type",
+                        "in": "query",
+                        "description": "Parent Type"
+                    },
+                    {
+                        "name": "parent_id",
+                        "in": "query",
+                        "description": "Parent Identifier"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "POST for Meeting",
+                "description": "Add meeting into the system",
+                "operationId": "CreateMeetingEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/meeting\/count": {
+            "get": {
+                "summary": "COUNT for Meeting",
+                "description": "Count all meetings from the system",
+                "operationId": "GetMeetingCountCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/meeting\/describe": {
+            "get": {
+                "summary": "DESCRIBE for Meeting",
+                "description": "Returns describe for meetings",
+                "operationId": "GetMeetingDescribe",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/meeting\/{meeting_id}": {
+            "delete": {
+                "summary": "DELETE for Meeting",
+                "description": "Delete meeting information",
+                "operationId": "DeleteMeetingEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "meeting_id",
+                        "in": "path",
+                        "description": "Meeting Identifier"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "GET for Meeting",
+                "description": "Return meeting information",
+                "operationId": "GetMeetingEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "meeting_id",
+                        "in": "path",
+                        "description": "Meeting Identifier"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "PUT for Meeting",
+                "description": "Update meeting information",
+                "operationId": "UpdateMeetingEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "meeting_id",
+                        "in": "path",
+                        "description": "Meeting Identifier"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/note": {
+            "get": {
+                "summary": "GET for Note",
+                "description": "Returns all notes from the system",
+                "operationId": "GetNoteCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Amount of results (default: 25)"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Start from record (default: 0)"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "Filter"
+                    },
+                    {
+                        "name": "parent_type",
+                        "in": "query",
+                        "description": "Parent Type"
+                    },
+                    {
+                        "name": "parent_id",
+                        "in": "query",
+                        "description": "Parent Identifier"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "POST for Note",
+                "description": "Add note into the system",
+                "operationId": "CreateNoteEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/note\/count": {
+            "get": {
+                "summary": "COUNT for Note",
+                "description": "Count all notes from the system",
+                "operationId": "GetNoteCountCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/note\/describe": {
+            "get": {
+                "summary": "DESCRIBE for Note",
+                "description": "Returns describe for notes",
+                "operationId": "GetNoteDescribe",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/note\/{note_id}": {
+            "delete": {
+                "summary": "DELETE for Note",
+                "description": "Delete note information",
+                "operationId": "DeleteNoteEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "note_id",
+                        "in": "path",
+                        "description": "Note Identifier"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "GET for Note",
+                "description": "Return note information",
+                "operationId": "GetNoteEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "note_id",
+                        "in": "path",
+                        "description": "Note Identifier"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "PUT for Note",
+                "description": "Update note information",
+                "operationId": "UpdateNoteEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "note_id",
+                        "in": "path",
+                        "description": "Note Identifier"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/opportunity": {
+            "get": {
+                "summary": "GET for Opportunity",
+                "description": "Returns all opportunities from the system",
+                "operationId": "GetOpportunityCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Amount of results (default: 25)"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Start from record (default: 0)"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "Filter"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "POST for Opportunity",
+                "description": "Add opportunity into the system",
+                "operationId": "CreateOpportunityEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/opportunity\/count": {
+            "get": {
+                "summary": "COUNT for Opportunity",
+                "description": "Count all opportunities from the system",
+                "operationId": "GetOpportunityCountCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/opportunity\/describe": {
+            "get": {
+                "summary": "DESCRIBE for Opportunity",
+                "description": "Returns describe for opportunities",
+                "operationId": "GetOpportunityDescribe",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/opportunity\/{opportunity_id}": {
+            "delete": {
+                "summary": "DELETE for Opportunity",
+                "description": "Delete opportunity information",
+                "operationId": "DeleteOpportunityEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "opportunity_id",
+                        "in": "path",
+                        "description": "Opportunity Identifier"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "GET for Opportunity",
+                "description": "Return opportunity information",
+                "operationId": "GetOpportunityEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "opportunity_id",
+                        "in": "path",
+                        "description": "Opportunity Identifier"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "PUT for Opportunity",
+                "description": "Update opportunity information",
+                "operationId": "UpdateOpportunityEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "opportunity_id",
+                        "in": "path",
+                        "description": "Opportunity Identifier"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/task": {
+            "get": {
+                "summary": "GET for Task",
+                "description": "Returns all tasks from the system",
+                "operationId": "GetTaskCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Amount of results (default: 25)"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Start from record (default: 0)"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "Filter"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "POST for Task",
+                "description": "Add task into the system",
+                "operationId": "CreateTaskEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/task\/count": {
+            "get": {
+                "summary": "COUNT for Task",
+                "description": "Count all tasks from the system",
+                "operationId": "GetTaskCountCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/task\/describe": {
+            "get": {
+                "summary": "DESCRIBE for Task",
+                "description": "Returns describe for tasks",
+                "operationId": "GetTaskDescribe",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/task\/{task_id}": {
+            "delete": {
+                "summary": "DELETE for Task",
+                "description": "Delete task information",
+                "operationId": "DeleteTaskEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "task_id",
+                        "in": "path",
+                        "description": "Task Identifier"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "GET for Task",
+                "description": "Return task information",
+                "operationId": "GetTaskEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "task_id",
+                        "in": "path",
+                        "description": "Task Identifier"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "PUT for Task",
+                "description": "Update task information",
+                "operationId": "UpdateTaskEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "task_id",
+                        "in": "path",
+                        "description": "Task Identifier"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/user": {
+            "get": {
+                "summary": "GET for User",
+                "description": "Returns all users from the system",
+                "operationId": "GetUserCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Amount of results (default: 25)"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Start from record (default: 0)"
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "Filter"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "POST for User",
+                "description": "Add user into the system",
+                "operationId": "CreateUserEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        },
+        "\/user\/count": {
+            "get": {
+                "summary": "COUNT for User",
+                "description": "Count all users from the system",
+                "operationId": "GetUserCountCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/user\/describe": {
+            "get": {
+                "summary": "DESCRIBE for User",
+                "description": "Returns describe for users",
+                "operationId": "GetUserDescribe",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    }
+                ]
+            }
+        },
+        "\/user\/{user_id}": {
+            "delete": {
+                "summary": "DELETE for User",
+                "description": "Delete user information",
+                "operationId": "DeleteUserEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "User Identifier"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "GET for User",
+                "description": "Return user information",
+                "operationId": "GetUserEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "User Identifier"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "PUT for User",
+                "description": "Update user information",
+                "operationId": "UpdateUserEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "X",
+                        "in": "header",
+                        "description": "User Key"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "User Identifier"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add account into the system"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Account": {
+                "type": "object",
+                "properties": {
+                    "embedded": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "relation": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "AccountCreate": {
+                "type": "object",
+                "properties": {
+                    "account_category": {
+                        "description": "Category",
+                        "type": "string"
+                    },
+                    "address_type": {
+                        "description": "Address Type",
+                        "type": "string"
+                    },
+                    "annual_revenue": {
+                        "description": "Annual Revenue",
+                        "type": "number"
+                    },
+                    "billing_city": {
+                        "description": "Billing City",
+                        "type": "string"
+                    },
+                    "billing_country": {
+                        "description": "Billing Country",
+                        "type": "string"
+                    },
+                    "billing_state": {
+                        "description": "Billing State",
+                        "type": "string"
+                    },
+                    "billing_street": {
+                        "description": "Billing Street",
+                        "type": "string"
+                    },
+                    "billing_zip": {
+                        "description": "Billing Zip",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Created At",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Email",
+                        "type": "string"
+                    },
+                    "email_alt": {
+                        "description": "Email Alternative",
+                        "type": "string"
+                    },
+                    "employees": {
+                        "description": "Employees",
+                        "type": "integer"
+                    },
+                    "facebook": {
+                        "description": "Facebook",
+                        "type": "string"
+                    },
+                    "fax": {
+                        "description": "Fax",
+                        "type": "string"
+                    },
+                    "industry": {
+                        "description": "Industry",
+                        "type": "string"
+                    },
+                    "livejournal": {
+                        "description": "Livejournal",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name",
+                        "type": "string"
+                    },
+                    "owner": {
+                        "description": "Owner",
+                        "type": "string"
+                    },
+                    "owner_id": {
+                        "description": "Owner Identifier",
+                        "type": "string"
+                    },
+                    "ownership": {
+                        "description": "Ownership",
+                        "type": "string"
+                    },
+                    "parent_id": {
+                        "description": "Parent Identifier",
+                        "type": "string"
+                    },
+                    "phone": {
+                        "description": "Phone",
+                        "type": "string"
+                    },
+                    "phone_alt": {
+                        "description": "Phone Alternative",
+                        "type": "string"
+                    },
+                    "rating": {
+                        "description": "Rating",
+                        "type": "string"
+                    },
+                    "shipping_city": {
+                        "description": "Shipping City",
+                        "type": "string"
+                    },
+                    "shipping_country": {
+                        "description": "Shipping Country",
+                        "type": "string"
+                    },
+                    "shipping_state": {
+                        "description": "Shipping State",
+                        "type": "string"
+                    },
+                    "shipping_street": {
+                        "description": "Shipping Street",
+                        "type": "string"
+                    },
+                    "shipping_zip": {
+                        "description": "Shipping Zip Code",
+                        "type": "string"
+                    },
+                    "sic_code": {
+                        "description": "SIC Code",
+                        "type": "string"
+                    },
+                    "tickersymbol": {
+                        "description": "Ticker Symbol",
+                        "type": "string"
+                    },
+                    "twitter": {
+                        "description": "Twitter",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "Type",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Updated At",
+                        "type": "string"
+                    },
+                    "website": {
+                        "description": "Website",
+                        "type": "string"
+                    },
+                    "website_alt": {
+                        "description": "Website Alternative",
+                        "type": "string"
+                    }
+                }
+            },
+            "AccountCreated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "AccountUpdate": {
+                "type": "object",
+                "properties": {
+                    "account_category": {
+                        "description": "Category",
+                        "type": "string"
+                    },
+                    "address_type": {
+                        "description": "Address Type",
+                        "type": "string"
+                    },
+                    "annual_revenue": {
+                        "description": "Annual Revenue",
+                        "type": "number"
+                    },
+                    "billing_city": {
+                        "description": "Billing City",
+                        "type": "string"
+                    },
+                    "billing_country": {
+                        "description": "Billing Country",
+                        "type": "string"
+                    },
+                    "billing_state": {
+                        "description": "Billing State",
+                        "type": "string"
+                    },
+                    "billing_street": {
+                        "description": "Billing Street",
+                        "type": "string"
+                    },
+                    "billing_zip": {
+                        "description": "Billing Zip",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Created At",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Email",
+                        "type": "string"
+                    },
+                    "email_alt": {
+                        "description": "Email Alternative",
+                        "type": "string"
+                    },
+                    "employees": {
+                        "description": "Employees",
+                        "type": "integer"
+                    },
+                    "facebook": {
+                        "description": "Facebook",
+                        "type": "string"
+                    },
+                    "fax": {
+                        "description": "Fax",
+                        "type": "string"
+                    },
+                    "industry": {
+                        "description": "Industry",
+                        "type": "string"
+                    },
+                    "livejournal": {
+                        "description": "Livejournal",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name",
+                        "type": "string"
+                    },
+                    "owner": {
+                        "description": "Owner",
+                        "type": "string"
+                    },
+                    "owner_id": {
+                        "description": "Owner Identifier",
+                        "type": "string"
+                    },
+                    "ownership": {
+                        "description": "Ownership",
+                        "type": "string"
+                    },
+                    "parent_id": {
+                        "description": "Parent Identifier",
+                        "type": "string"
+                    },
+                    "phone": {
+                        "description": "Phone",
+                        "type": "string"
+                    },
+                    "phone_alt": {
+                        "description": "Phone Alternative",
+                        "type": "string"
+                    },
+                    "rating": {
+                        "description": "Rating",
+                        "type": "string"
+                    },
+                    "shipping_city": {
+                        "description": "Shipping City",
+                        "type": "string"
+                    },
+                    "shipping_country": {
+                        "description": "Shipping Country",
+                        "type": "string"
+                    },
+                    "shipping_state": {
+                        "description": "Shipping State",
+                        "type": "string"
+                    },
+                    "shipping_street": {
+                        "description": "Shipping Street",
+                        "type": "string"
+                    },
+                    "shipping_zip": {
+                        "description": "Shipping Zip Code",
+                        "type": "string"
+                    },
+                    "sic_code": {
+                        "description": "SIC Code",
+                        "type": "string"
+                    },
+                    "tickersymbol": {
+                        "description": "Ticker Symbol",
+                        "type": "string"
+                    },
+                    "twitter": {
+                        "description": "Twitter",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "Type",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Updated At",
+                        "type": "string"
+                    },
+                    "website": {
+                        "description": "Website",
+                        "type": "string"
+                    },
+                    "website_alt": {
+                        "description": "Website Alternative",
+                        "type": "string"
+                    }
+                }
+            },
+            "AccountUpdated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "Attachment": {
+                "type": "object",
+                "properties": {
+                    "embedded": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "relation": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "AttachmentCreate": {
+                "type": "object",
+                "properties": {
+                    "contact_name": {
+                        "description": "Contact Name",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Created At",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "link": {
+                        "description": "Link",
+                        "type": "string"
+                    },
+                    "mime_type": {
+                        "description": "Mime Type",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name",
+                        "type": "string"
+                    },
+                    "owner_user_id": {
+                        "description": "Owner User Identifier",
+                        "type": "string"
+                    },
+                    "owner_user_name": {
+                        "description": "Owner User Name",
+                        "type": "string"
+                    },
+                    "parent_id": {
+                        "description": "Parent Identifier",
+                        "type": "string"
+                    },
+                    "parent_name": {
+                        "description": "Parent Name",
+                        "type": "string"
+                    },
+                    "parent_type": {
+                        "description": "Parent Type",
+                        "type": "string"
+                    },
+                    "size": {
+                        "description": "Size (in bytes)",
+                        "type": "integer"
+                    },
+                    "updated_at": {
+                        "description": "Updated At",
+                        "type": "string"
+                    }
+                }
+            },
+            "AttachmentCreated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "AttachmentUpdate": {
+                "type": "object",
+                "properties": {
+                    "contact_name": {
+                        "description": "Contact Name",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Created At",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "link": {
+                        "description": "Link",
+                        "type": "string"
+                    },
+                    "mime_type": {
+                        "description": "Mime Type",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name",
+                        "type": "string"
+                    },
+                    "owner_user_id": {
+                        "description": "Owner User Identifier",
+                        "type": "string"
+                    },
+                    "owner_user_name": {
+                        "description": "Owner User Name",
+                        "type": "string"
+                    },
+                    "parent_id": {
+                        "description": "Parent Identifier",
+                        "type": "string"
+                    },
+                    "parent_name": {
+                        "description": "Parent Name",
+                        "type": "string"
+                    },
+                    "parent_type": {
+                        "description": "Parent Type",
+                        "type": "string"
+                    },
+                    "size": {
+                        "description": "Size (in bytes)",
+                        "type": "integer"
+                    },
+                    "updated_at": {
+                        "description": "Updated At",
+                        "type": "string"
+                    }
+                }
+            },
+            "AttachmentUpdated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "Call": {
+                "type": "object",
+                "properties": {
+                    "embedded": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "relation": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "CallCreate": {
+                "type": "object",
+                "properties": {
+                    "contact_id": {
+                        "description": "Contact Identifier",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Created At",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "direction": {
+                        "description": "Direction",
+                        "type": "string"
+                    },
+                    "ended_at": {
+                        "description": "Ended At",
+                        "type": "string"
+                    },
+                    "owner_user_id": {
+                        "description": "Owner User Identifier",
+                        "type": "string"
+                    },
+                    "parent_id": {
+                        "description": "Parent Identifier",
+                        "type": "string"
+                    },
+                    "parent_type": {
+                        "description": "Parent Type",
+                        "type": "string"
+                    },
+                    "purpose": {
+                        "description": "Purpose",
+                        "type": "string"
+                    },
+                    "result": {
+                        "description": "Result",
+                        "type": "string"
+                    },
+                    "started_at": {
+                        "description": "Started At",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "Subject",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Updated At",
+                        "type": "string"
+                    }
+                }
+            },
+            "CallCreated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "CallUpdate": {
+                "type": "object",
+                "properties": {
+                    "contact_id": {
+                        "description": "Contact Identifier",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Created At",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "direction": {
+                        "description": "Direction",
+                        "type": "string"
+                    },
+                    "ended_at": {
+                        "description": "Ended At",
+                        "type": "string"
+                    },
+                    "owner_user_id": {
+                        "description": "Owner User Identifier",
+                        "type": "string"
+                    },
+                    "parent_id": {
+                        "description": "Parent Identifier",
+                        "type": "string"
+                    },
+                    "parent_type": {
+                        "description": "Parent Type",
+                        "type": "string"
+                    },
+                    "purpose": {
+                        "description": "Purpose",
+                        "type": "string"
+                    },
+                    "result": {
+                        "description": "Result",
+                        "type": "string"
+                    },
+                    "started_at": {
+                        "description": "Started At",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "Subject",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Updated At",
+                        "type": "string"
+                    }
+                }
+            },
+            "CallUpdated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "Contact": {
+                "type": "object",
+                "properties": {
+                    "embedded": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "relation": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "ContactCreate": {
+                "type": "object",
+                "properties": {
+                    "account_id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "address_city": {
+                        "description": "Address City",
+                        "type": "string"
+                    },
+                    "address_country": {
+                        "description": "Address Country",
+                        "type": "string"
+                    },
+                    "address_state": {
+                        "description": "Address State",
+                        "type": "string"
+                    },
+                    "address_street": {
+                        "description": "Address Street",
+                        "type": "string"
+                    },
+                    "address_zip": {
+                        "description": "Address Zip",
+                        "type": "string"
+                    },
+                    "alternate_address_city": {
+                        "description": "Alternative Address City",
+                        "type": "string"
+                    },
+                    "alternate_address_country": {
+                        "description": "Alternative Address Country",
+                        "type": "string"
+                    },
+                    "alternate_address_state": {
+                        "description": "Alternative Address State",
+                        "type": "string"
+                    },
+                    "alternate_address_street": {
+                        "description": "Alternative Address Street",
+                        "type": "string"
+                    },
+                    "alternate_address_zip": {
+                        "description": "Alternative Address Zip Code",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Created At",
+                        "type": "string"
+                    },
+                    "date_created": {
+                        "description": "Date Created",
+                        "type": "string"
+                    },
+                    "date_updated": {
+                        "description": "Date Updated",
+                        "type": "string"
+                    },
+                    "department": {
+                        "description": "Department",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "do_not_call": {
+                        "description": "Do Not Call",
+                        "type": "boolean"
+                    },
+                    "email": {
+                        "description": "Email",
+                        "type": "string"
+                    },
+                    "email_alt": {
+                        "description": "Email Alternative",
+                        "type": "string"
+                    },
+                    "fax": {
+                        "description": "Fax",
+                        "type": "string"
+                    },
+                    "first_name": {
+                        "description": "First Name",
+                        "type": "string"
+                    },
+                    "full_name": {
+                        "description": "Full Name",
+                        "type": "string"
+                    },
+                    "last_name": {
+                        "description": "Last Name",
+                        "type": "string"
+                    },
+                    "lead_source": {
+                        "description": "Lead Source",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name",
+                        "type": "string"
+                    },
+                    "owner_id": {
+                        "description": "Owner Identifier",
+                        "type": "string"
+                    },
+                    "phone_home": {
+                        "description": "Phone Home",
+                        "type": "string"
+                    },
+                    "phone_mobile": {
+                        "description": "Phone Mobile",
+                        "type": "string"
+                    },
+                    "phone_work": {
+                        "description": "Phone Work",
+                        "type": "string"
+                    },
+                    "report_to_id": {
+                        "description": "Report To Identifier",
+                        "type": "string"
+                    },
+                    "salutation": {
+                        "description": "Salutation",
+                        "type": "string"
+                    },
+                    "sync_to_outlook": {
+                        "description": "Sync To Outlook",
+                        "type": "boolean"
+                    },
+                    "title": {
+                        "description": "Title",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "Type",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Updated At",
+                        "type": "string"
+                    },
+                    "user": {
+                        "description": "User",
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "description": "User Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "ContactCreated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "ContactUpdate": {
+                "type": "object",
+                "properties": {
+                    "account_id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "address_city": {
+                        "description": "Address City",
+                        "type": "string"
+                    },
+                    "address_country": {
+                        "description": "Address Country",
+                        "type": "string"
+                    },
+                    "address_state": {
+                        "description": "Address State",
+                        "type": "string"
+                    },
+                    "address_street": {
+                        "description": "Address Street",
+                        "type": "string"
+                    },
+                    "address_zip": {
+                        "description": "Address Zip",
+                        "type": "string"
+                    },
+                    "alternate_address_city": {
+                        "description": "Alternative Address City",
+                        "type": "string"
+                    },
+                    "alternate_address_country": {
+                        "description": "Alternative Address Country",
+                        "type": "string"
+                    },
+                    "alternate_address_state": {
+                        "description": "Alternative Address State",
+                        "type": "string"
+                    },
+                    "alternate_address_street": {
+                        "description": "Alternative Address Street",
+                        "type": "string"
+                    },
+                    "alternate_address_zip": {
+                        "description": "Alternative Address Zip Code",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Created At",
+                        "type": "string"
+                    },
+                    "date_created": {
+                        "description": "Date Created",
+                        "type": "string"
+                    },
+                    "date_updated": {
+                        "description": "Date Updated",
+                        "type": "string"
+                    },
+                    "department": {
+                        "description": "Department",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "do_not_call": {
+                        "description": "Do Not Call",
+                        "type": "boolean"
+                    },
+                    "email": {
+                        "description": "Email",
+                        "type": "string"
+                    },
+                    "email_alt": {
+                        "description": "Email Alternative",
+                        "type": "string"
+                    },
+                    "fax": {
+                        "description": "Fax",
+                        "type": "string"
+                    },
+                    "first_name": {
+                        "description": "First Name",
+                        "type": "string"
+                    },
+                    "full_name": {
+                        "description": "Full Name",
+                        "type": "string"
+                    },
+                    "last_name": {
+                        "description": "Last Name",
+                        "type": "string"
+                    },
+                    "lead_source": {
+                        "description": "Lead Source",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name",
+                        "type": "string"
+                    },
+                    "owner_id": {
+                        "description": "Owner Identifier",
+                        "type": "string"
+                    },
+                    "phone_home": {
+                        "description": "Phone Home",
+                        "type": "string"
+                    },
+                    "phone_mobile": {
+                        "description": "Phone Mobile",
+                        "type": "string"
+                    },
+                    "phone_work": {
+                        "description": "Phone Work",
+                        "type": "string"
+                    },
+                    "report_to_id": {
+                        "description": "Report To Identifier",
+                        "type": "string"
+                    },
+                    "salutation": {
+                        "description": "Salutation",
+                        "type": "string"
+                    },
+                    "sync_to_outlook": {
+                        "description": "Sync To Outlook",
+                        "type": "boolean"
+                    },
+                    "title": {
+                        "description": "Title",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "Type",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Updated At",
+                        "type": "string"
+                    },
+                    "user": {
+                        "description": "User",
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "description": "User Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "ContactUpdated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "Count": {
+                "type": "object",
+                "properties": {
+                    "total": {
+                        "description": "Total",
+                        "type": "integer"
+                    }
+                }
+            },
+            "Crm": {
+                "type": "object",
+                "properties": {
+                    "api_url": {
+                        "description": "API URL",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "Type",
+                        "type": "string"
+                    }
+                }
+            },
+            "CrmCreate": {
+                "type": "object",
+                "properties": {
+                    "api_url": {
+                        "description": "API URL",
+                        "type": "string"
+                    },
+                    "login": {
+                        "description": "Login",
+                        "type": "string"
+                    },
+                    "password": {
+                        "description": "Password",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "Type",
+                        "type": "string"
+                    }
+                }
+            },
+            "CrmCreated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "CrmUpdate": {
+                "type": "object",
+                "properties": {
+                    "api_url": {
+                        "description": "API URL",
+                        "type": "string"
+                    },
+                    "login": {
+                        "description": "Login",
+                        "type": "string"
+                    },
+                    "password": {
+                        "description": "Password",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "Type",
+                        "type": "string"
+                    }
+                }
+            },
+            "CrmUpdated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "CustomField": {
+                "type": "object",
+                "properties": {
+                    "embedded": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "CustomFieldCreate": {
+                "type": "object",
+                "properties": {
+                    "decimal_places": {
+                        "description": "Decimal Places",
+                        "type": "integer"
+                    },
+                    "default_value": {
+                        "description": "Default Value",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "entity": {
+                        "description": "Entity",
+                        "type": "string"
+                    },
+                    "label": {
+                        "description": "Label",
+                        "type": "string"
+                    },
+                    "length": {
+                        "description": "Length",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "Name",
+                        "type": "string"
+                    },
+                    "required": {
+                        "description": "Required",
+                        "type": "boolean"
+                    },
+                    "select": {
+                        "description": "Select Pairs for field with type \"select\"",
+                        "type": "array"
+                    },
+                    "type": {
+                        "description": "Type",
+                        "type": "string"
+                    }
+                }
+            },
+            "CustomFieldCreated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "CustomFieldUpdate": {
+                "type": "object",
+                "properties": {
+                    "decimal_places": {
+                        "description": "Decimal Places",
+                        "type": "integer"
+                    },
+                    "default_value": {
+                        "description": "Default Value",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "entity": {
+                        "description": "Entity",
+                        "type": "string"
+                    },
+                    "label": {
+                        "description": "Label",
+                        "type": "string"
+                    },
+                    "length": {
+                        "description": "Length",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "Name",
+                        "type": "string"
+                    },
+                    "required": {
+                        "description": "Required",
+                        "type": "boolean"
+                    },
+                    "select": {
+                        "description": "Select Pairs for field with type \"select\"",
+                        "type": "array"
+                    },
+                    "type": {
+                        "description": "Type",
+                        "type": "string"
+                    }
+                }
+            },
+            "CustomFieldUpdated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "Describe": {
+                "type": "object",
+                "properties": {
+                    "entity": {
+                        "description": "Entity",
+                        "type": "string"
+                    },
+                    "schema": {
+                        "description": "Schema",
+                        "type": "object"
+                    }
+                }
+            },
+            "Email": {
+                "type": "object",
+                "properties": {
+                    "embedded": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "relation": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "EmailCreate": {
+                "type": "object",
+                "properties": {
+                    "bcc": {
+                        "description": "BCC",
+                        "type": "string"
+                    },
+                    "body": {
+                        "description": "Body",
+                        "type": "string"
+                    },
+                    "cc": {
+                        "description": "CC",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Created At",
+                        "type": "string"
+                    },
+                    "direction": {
+                        "description": "Direction",
+                        "type": "string"
+                    },
+                    "from": {
+                        "description": "From",
+                        "type": "string"
+                    },
+                    "owner_user_id": {
+                        "description": "Owner User Identifier",
+                        "type": "string"
+                    },
+                    "parent_id": {
+                        "description": "Parent Identifier",
+                        "type": "string"
+                    },
+                    "parent_type": {
+                        "description": "Parent Type",
+                        "type": "string"
+                    },
+                    "sent_at": {
+                        "description": "Sent At",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "Subject",
+                        "type": "string"
+                    },
+                    "to": {
+                        "description": "To",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Updated At",
+                        "type": "string"
+                    }
+                }
+            },
+            "EmailCreated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "EmailUpdate": {
+                "type": "object",
+                "properties": {
+                    "bcc": {
+                        "description": "BCC",
+                        "type": "string"
+                    },
+                    "body": {
+                        "description": "Body",
+                        "type": "string"
+                    },
+                    "cc": {
+                        "description": "CC",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Created At",
+                        "type": "string"
+                    },
+                    "direction": {
+                        "description": "Direction",
+                        "type": "string"
+                    },
+                    "from": {
+                        "description": "From",
+                        "type": "string"
+                    },
+                    "owner_user_id": {
+                        "description": "Owner User Identifier",
+                        "type": "string"
+                    },
+                    "parent_id": {
+                        "description": "Parent Identifier",
+                        "type": "string"
+                    },
+                    "parent_type": {
+                        "description": "Parent Type",
+                        "type": "string"
+                    },
+                    "sent_at": {
+                        "description": "Sent At",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "Subject",
+                        "type": "string"
+                    },
+                    "to": {
+                        "description": "To",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Updated At",
+                        "type": "string"
+                    }
+                }
+            },
+            "EmailUpdated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "Event": {
+                "type": "object",
+                "properties": {
+                    "embedded": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "relation": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "EventCreate": {
+                "type": "object",
+                "properties": {
+                    "access": {
+                        "description": "Access",
+                        "type": "string"
+                    },
+                    "contact_id": {
+                        "description": "Contact Identifier",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Created At",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "ended_at": {
+                        "description": "Ended At",
+                        "type": "string"
+                    },
+                    "is_all_day": {
+                        "description": "Is All Day",
+                        "type": "boolean"
+                    },
+                    "location": {
+                        "description": "Location",
+                        "type": "string"
+                    },
+                    "owner_user_id": {
+                        "description": "Owner User Identifier",
+                        "type": "string"
+                    },
+                    "parent_id": {
+                        "description": "Parent Identifier",
+                        "type": "string"
+                    },
+                    "parent_type": {
+                        "description": "Parent Type",
+                        "type": "string"
+                    },
+                    "started_at": {
+                        "description": "Started At",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "Subject",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Updated At",
+                        "type": "string"
+                    }
+                }
+            },
+            "EventCreated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "EventUpdate": {
+                "type": "object",
+                "properties": {
+                    "access": {
+                        "description": "Access",
+                        "type": "string"
+                    },
+                    "contact_id": {
+                        "description": "Contact Identifier",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Created At",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "ended_at": {
+                        "description": "Ended At",
+                        "type": "string"
+                    },
+                    "is_all_day": {
+                        "description": "Is All Day",
+                        "type": "boolean"
+                    },
+                    "location": {
+                        "description": "Location",
+                        "type": "string"
+                    },
+                    "owner_user_id": {
+                        "description": "Owner User Identifier",
+                        "type": "string"
+                    },
+                    "parent_id": {
+                        "description": "Parent Identifier",
+                        "type": "string"
+                    },
+                    "parent_type": {
+                        "description": "Parent Type",
+                        "type": "string"
+                    },
+                    "started_at": {
+                        "description": "Started At",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "Subject",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Updated At",
+                        "type": "string"
+                    }
+                }
+            },
+            "EventUpdated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "Lead": {
+                "type": "object",
+                "properties": {
+                    "embedded": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "relation": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "LeadCreate": {
+                "type": "object",
+                "properties": {
+                    "account_id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "account_name": {
+                        "description": "Account Name",
+                        "type": "string"
+                    },
+                    "alt_city": {
+                        "description": "Alternative City",
+                        "type": "string"
+                    },
+                    "alt_country": {
+                        "description": "Alternative Country",
+                        "type": "string"
+                    },
+                    "alt_state": {
+                        "description": "Alternative State",
+                        "type": "string"
+                    },
+                    "alt_street": {
+                        "description": "Alternative Street",
+                        "type": "string"
+                    },
+                    "alt_zip_code": {
+                        "description": "Alternative Zip Code",
+                        "type": "string"
+                    },
+                    "annual_revenue": {
+                        "description": "Annual Revenue",
+                        "type": "number"
+                    },
+                    "assigned_user_id": {
+                        "description": "Assigned User Identifier",
+                        "type": "string"
+                    },
+                    "birth_date": {
+                        "description": "Annual Revenue",
+                        "type": "string"
+                    },
+                    "campaign_id": {
+                        "description": "Campaign Identifier",
+                        "type": "string"
+                    },
+                    "city": {
+                        "description": "City",
+                        "type": "string"
+                    },
+                    "company": {
+                        "description": "Company",
+                        "type": "string"
+                    },
+                    "contact_id": {
+                        "description": "Contact Identifier",
+                        "type": "string"
+                    },
+                    "country": {
+                        "description": "Country",
+                        "type": "string"
+                    },
+                    "date_created": {
+                        "description": "Date Created",
+                        "type": "string"
+                    },
+                    "date_updated": {
+                        "description": "Date Updated",
+                        "type": "string"
+                    },
+                    "department": {
+                        "description": "Department",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "do_not_call": {
+                        "description": "Do Not Call",
+                        "type": "boolean"
+                    },
+                    "email": {
+                        "description": "Email",
+                        "type": "string"
+                    },
+                    "email_home": {
+                        "description": "Email Home",
+                        "type": "string"
+                    },
+                    "email_other": {
+                        "description": "Email Other",
+                        "type": "string"
+                    },
+                    "event_id": {
+                        "description": "Event Identifier",
+                        "type": "string"
+                    },
+                    "fax": {
+                        "description": "Fax",
+                        "type": "string"
+                    },
+                    "first_name": {
+                        "description": "First Name",
+                        "type": "string"
+                    },
+                    "industry": {
+                        "description": "Industry",
+                        "type": "string"
+                    },
+                    "last_name": {
+                        "description": "Last Name",
+                        "type": "string"
+                    },
+                    "lead_source": {
+                        "description": "Lead Source",
+                        "type": "string"
+                    },
+                    "lead_source_description": {
+                        "description": "Lead Source Description",
+                        "type": "string"
+                    },
+                    "opened": {
+                        "description": "Opened",
+                        "type": "string"
+                    },
+                    "opportunity_id": {
+                        "description": "Opportunity Identifier",
+                        "type": "string"
+                    },
+                    "owner_id": {
+                        "description": "Owner Identifier",
+                        "type": "string"
+                    },
+                    "pager": {
+                        "description": "Pager Number",
+                        "type": "string"
+                    },
+                    "phone_home": {
+                        "description": "Phone Home",
+                        "type": "string"
+                    },
+                    "phone_mobile": {
+                        "description": "Phone Mobile",
+                        "type": "string"
+                    },
+                    "phone_other": {
+                        "description": "Phone Other",
+                        "type": "string"
+                    },
+                    "phone_work": {
+                        "description": "Phone Work",
+                        "type": "string"
+                    },
+                    "referred_by": {
+                        "description": "Referred By",
+                        "type": "string"
+                    },
+                    "salutation": {
+                        "description": "Salutation",
+                        "type": "string"
+                    },
+                    "skype_id": {
+                        "description": "Skype",
+                        "type": "string"
+                    },
+                    "state": {
+                        "description": "State",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status",
+                        "type": "string"
+                    },
+                    "status_description": {
+                        "description": "Status Description",
+                        "type": "string"
+                    },
+                    "street": {
+                        "description": "Street",
+                        "type": "string"
+                    },
+                    "suite": {
+                        "description": "Suite",
+                        "type": "string"
+                    },
+                    "task_id": {
+                        "description": "Task Identifier",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "Title",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "Type",
+                        "type": "string"
+                    },
+                    "website": {
+                        "description": "Website",
+                        "type": "string"
+                    },
+                    "zip_code": {
+                        "description": "Zip Code",
+                        "type": "string"
+                    }
+                }
+            },
+            "LeadCreated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "LeadUpdate": {
+                "type": "object",
+                "properties": {
+                    "account_id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "account_name": {
+                        "description": "Account Name",
+                        "type": "string"
+                    },
+                    "alt_city": {
+                        "description": "Alternative City",
+                        "type": "string"
+                    },
+                    "alt_country": {
+                        "description": "Alternative Country",
+                        "type": "string"
+                    },
+                    "alt_state": {
+                        "description": "Alternative State",
+                        "type": "string"
+                    },
+                    "alt_street": {
+                        "description": "Alternative Street",
+                        "type": "string"
+                    },
+                    "alt_zip_code": {
+                        "description": "Alternative Zip Code",
+                        "type": "string"
+                    },
+                    "annual_revenue": {
+                        "description": "Annual Revenue",
+                        "type": "number"
+                    },
+                    "assigned_user_id": {
+                        "description": "Assigned User Identifier",
+                        "type": "string"
+                    },
+                    "birth_date": {
+                        "description": "Annual Revenue",
+                        "type": "string"
+                    },
+                    "campaign_id": {
+                        "description": "Campaign Identifier",
+                        "type": "string"
+                    },
+                    "city": {
+                        "description": "City",
+                        "type": "string"
+                    },
+                    "company": {
+                        "description": "Company",
+                        "type": "string"
+                    },
+                    "contact_id": {
+                        "description": "Contact Identifier",
+                        "type": "string"
+                    },
+                    "country": {
+                        "description": "Country",
+                        "type": "string"
+                    },
+                    "date_created": {
+                        "description": "Date Created",
+                        "type": "string"
+                    },
+                    "date_updated": {
+                        "description": "Date Updated",
+                        "type": "string"
+                    },
+                    "department": {
+                        "description": "Department",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "do_not_call": {
+                        "description": "Do Not Call",
+                        "type": "boolean"
+                    },
+                    "email": {
+                        "description": "Email",
+                        "type": "string"
+                    },
+                    "email_home": {
+                        "description": "Email Home",
+                        "type": "string"
+                    },
+                    "email_other": {
+                        "description": "Email Other",
+                        "type": "string"
+                    },
+                    "event_id": {
+                        "description": "Event Identifier",
+                        "type": "string"
+                    },
+                    "fax": {
+                        "description": "Fax",
+                        "type": "string"
+                    },
+                    "first_name": {
+                        "description": "First Name",
+                        "type": "string"
+                    },
+                    "industry": {
+                        "description": "Industry",
+                        "type": "string"
+                    },
+                    "last_name": {
+                        "description": "Last Name",
+                        "type": "string"
+                    },
+                    "lead_source": {
+                        "description": "Lead Source",
+                        "type": "string"
+                    },
+                    "lead_source_description": {
+                        "description": "Lead Source Description",
+                        "type": "string"
+                    },
+                    "opened": {
+                        "description": "Opened",
+                        "type": "string"
+                    },
+                    "opportunity_id": {
+                        "description": "Opportunity Identifier",
+                        "type": "string"
+                    },
+                    "owner_id": {
+                        "description": "Owner Identifier",
+                        "type": "string"
+                    },
+                    "pager": {
+                        "description": "Pager Number",
+                        "type": "string"
+                    },
+                    "phone_home": {
+                        "description": "Phone Home",
+                        "type": "string"
+                    },
+                    "phone_mobile": {
+                        "description": "Phone Mobile",
+                        "type": "string"
+                    },
+                    "phone_other": {
+                        "description": "Phone Other",
+                        "type": "string"
+                    },
+                    "phone_work": {
+                        "description": "Phone Work",
+                        "type": "string"
+                    },
+                    "referred_by": {
+                        "description": "Referred By",
+                        "type": "string"
+                    },
+                    "salutation": {
+                        "description": "Salutation",
+                        "type": "string"
+                    },
+                    "skype_id": {
+                        "description": "Skype",
+                        "type": "string"
+                    },
+                    "state": {
+                        "description": "State",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status",
+                        "type": "string"
+                    },
+                    "status_description": {
+                        "description": "Status Description",
+                        "type": "string"
+                    },
+                    "street": {
+                        "description": "Street",
+                        "type": "string"
+                    },
+                    "suite": {
+                        "description": "Suite",
+                        "type": "string"
+                    },
+                    "task_id": {
+                        "description": "Task Identifier",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "Title",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "Type",
+                        "type": "string"
+                    },
+                    "website": {
+                        "description": "Website",
+                        "type": "string"
+                    },
+                    "zip_code": {
+                        "description": "Zip Code",
+                        "type": "string"
+                    }
+                }
+            },
+            "LeadUpdated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "Meeting": {
+                "type": "object",
+                "properties": {
+                    "embedded": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "relation": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "MeetingCreate": {
+                "type": "object",
+                "properties": {
+                    "contact_id": {
+                        "description": "Contact Identifier",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Created At",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "ended_at": {
+                        "description": "Ended At",
+                        "type": "string"
+                    },
+                    "location": {
+                        "description": "Location",
+                        "type": "string"
+                    },
+                    "owner_user_id": {
+                        "description": "Owner User Identifier",
+                        "type": "string"
+                    },
+                    "parent_id": {
+                        "description": "Parent Identifier",
+                        "type": "string"
+                    },
+                    "parent_type": {
+                        "description": "Parent Type",
+                        "type": "string"
+                    },
+                    "result": {
+                        "description": "Result",
+                        "type": "string"
+                    },
+                    "started_at": {
+                        "description": "Started At",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "Subject",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Updated At",
+                        "type": "string"
+                    }
+                }
+            },
+            "MeetingCreated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "MeetingUpdate": {
+                "type": "object",
+                "properties": {
+                    "contact_id": {
+                        "description": "Contact Identifier",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Created At",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "ended_at": {
+                        "description": "Ended At",
+                        "type": "string"
+                    },
+                    "location": {
+                        "description": "Location",
+                        "type": "string"
+                    },
+                    "owner_user_id": {
+                        "description": "Owner User Identifier",
+                        "type": "string"
+                    },
+                    "parent_id": {
+                        "description": "Parent Identifier",
+                        "type": "string"
+                    },
+                    "parent_type": {
+                        "description": "Parent Type",
+                        "type": "string"
+                    },
+                    "result": {
+                        "description": "Result",
+                        "type": "string"
+                    },
+                    "started_at": {
+                        "description": "Started At",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "Subject",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Updated At",
+                        "type": "string"
+                    }
+                }
+            },
+            "MeetingUpdated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "Note": {
+                "type": "object",
+                "properties": {
+                    "embedded": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "relation": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "NoteCreate": {
+                "type": "object",
+                "properties": {
+                    "body": {
+                        "description": "Body",
+                        "type": "string"
+                    },
+                    "contact_name": {
+                        "description": "Contact Name",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Created At",
+                        "type": "string"
+                    },
+                    "owner_user_id": {
+                        "description": "Owner User Identifier",
+                        "type": "string"
+                    },
+                    "owner_user_name": {
+                        "description": "Owner User Name",
+                        "type": "string"
+                    },
+                    "parent_id": {
+                        "description": "Parent Identifier",
+                        "type": "string"
+                    },
+                    "parent_name": {
+                        "description": "Parent Name",
+                        "type": "string"
+                    },
+                    "parent_type": {
+                        "description": "Parent Type",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "Subject",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Updated At",
+                        "type": "string"
+                    }
+                }
+            },
+            "NoteCreated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "NoteUpdate": {
+                "type": "object",
+                "properties": {
+                    "body": {
+                        "description": "Body",
+                        "type": "string"
+                    },
+                    "contact_name": {
+                        "description": "Contact Name",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Created At",
+                        "type": "string"
+                    },
+                    "owner_user_id": {
+                        "description": "Owner User Identifier",
+                        "type": "string"
+                    },
+                    "owner_user_name": {
+                        "description": "Owner User Name",
+                        "type": "string"
+                    },
+                    "parent_id": {
+                        "description": "Parent Identifier",
+                        "type": "string"
+                    },
+                    "parent_name": {
+                        "description": "Parent Name",
+                        "type": "string"
+                    },
+                    "parent_type": {
+                        "description": "Parent Type",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "Subject",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Updated At",
+                        "type": "string"
+                    }
+                }
+            },
+            "NoteUpdated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "Opportunity": {
+                "type": "object",
+                "properties": {
+                    "embedded": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "relation": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "OpportunityCreate": {
+                "type": "object",
+                "properties": {
+                    "account_id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "account_name": {
+                        "description": "Account Name",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "Amount",
+                        "type": "number"
+                    },
+                    "assigned_user_id": {
+                        "description": "Assigned User Identifier",
+                        "type": "string"
+                    },
+                    "assigned_user_name": {
+                        "description": "Assigned User Name",
+                        "type": "string"
+                    },
+                    "campaign_id": {
+                        "description": "Campaign Identifier",
+                        "type": "string"
+                    },
+                    "campaign_name": {
+                        "description": "Campaign Name",
+                        "type": "string"
+                    },
+                    "contact_id": {
+                        "description": "Contact Identifier",
+                        "type": "string"
+                    },
+                    "currency_name": {
+                        "description": "Currency Name",
+                        "type": "string"
+                    },
+                    "currency_symbol": {
+                        "description": "Currency Symbol",
+                        "type": "string"
+                    },
+                    "date_closed": {
+                        "description": "Date Closed",
+                        "type": "string"
+                    },
+                    "date_created": {
+                        "description": "Date Created",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "lead_id": {
+                        "description": "Lead Identifier",
+                        "type": "string"
+                    },
+                    "lead_source": {
+                        "description": "Lead Source",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name",
+                        "type": "string"
+                    },
+                    "next_step": {
+                        "description": "Next Step",
+                        "type": "string"
+                    },
+                    "owner_id": {
+                        "description": "Owner Identifier",
+                        "type": "string"
+                    },
+                    "probability": {
+                        "description": "Probability",
+                        "type": "number"
+                    },
+                    "sales_stage": {
+                        "description": "Sales Stage",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "Type",
+                        "type": "string"
+                    }
+                }
+            },
+            "OpportunityCreated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "OpportunityUpdate": {
+                "type": "object",
+                "properties": {
+                    "account_id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "account_name": {
+                        "description": "Account Name",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "Amount",
+                        "type": "number"
+                    },
+                    "assigned_user_id": {
+                        "description": "Assigned User Identifier",
+                        "type": "string"
+                    },
+                    "assigned_user_name": {
+                        "description": "Assigned User Name",
+                        "type": "string"
+                    },
+                    "campaign_id": {
+                        "description": "Campaign Identifier",
+                        "type": "string"
+                    },
+                    "campaign_name": {
+                        "description": "Campaign Name",
+                        "type": "string"
+                    },
+                    "contact_id": {
+                        "description": "Contact Identifier",
+                        "type": "string"
+                    },
+                    "currency_name": {
+                        "description": "Currency Name",
+                        "type": "string"
+                    },
+                    "currency_symbol": {
+                        "description": "Currency Symbol",
+                        "type": "string"
+                    },
+                    "date_closed": {
+                        "description": "Date Closed",
+                        "type": "string"
+                    },
+                    "date_created": {
+                        "description": "Date Created",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "lead_id": {
+                        "description": "Lead Identifier",
+                        "type": "string"
+                    },
+                    "lead_source": {
+                        "description": "Lead Source",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name",
+                        "type": "string"
+                    },
+                    "next_step": {
+                        "description": "Next Step",
+                        "type": "string"
+                    },
+                    "owner_id": {
+                        "description": "Owner Identifier",
+                        "type": "string"
+                    },
+                    "probability": {
+                        "description": "Probability",
+                        "type": "number"
+                    },
+                    "sales_stage": {
+                        "description": "Sales Stage",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "Type",
+                        "type": "string"
+                    }
+                }
+            },
+            "OpportunityUpdated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "Select": {
+                "type": "object",
+                "properties": {
+                    "label": {
+                        "description": "Label",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "Value",
+                        "type": "string"
+                    }
+                }
+            },
+            "SelectCreated": {
+                "type": "object",
+                "properties": {
+                    "label": {
+                        "description": "Label",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "Value",
+                        "type": "string"
+                    }
+                }
+            },
+            "SelectUpdated": {
+                "type": "object",
+                "properties": {
+                    "label": {
+                        "description": "Label",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "Value",
+                        "type": "string"
+                    }
+                }
+            },
+            "Task": {
+                "type": "object",
+                "properties": {
+                    "embedded": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "relation": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "TaskCreate": {
+                "type": "object",
+                "properties": {
+                    "account_id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "assigned_user_id": {
+                        "description": "Assigned User Identifier",
+                        "type": "string"
+                    },
+                    "contact": {
+                        "description": "Contact",
+                        "type": "string"
+                    },
+                    "contact_id": {
+                        "description": "Contact Identifier",
+                        "type": "string"
+                    },
+                    "created_date": {
+                        "description": "Created Date",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "due_date": {
+                        "description": "Due Date",
+                        "type": "string"
+                    },
+                    "lead_id": {
+                        "description": "Lead Identifier",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name",
+                        "type": "string"
+                    },
+                    "opportunity": {
+                        "description": "Opportunity",
+                        "type": "string"
+                    },
+                    "opportunity_id": {
+                        "description": "Opportunity Identifier",
+                        "type": "string"
+                    },
+                    "owner": {
+                        "description": "Owner",
+                        "type": "string"
+                    },
+                    "owner_id": {
+                        "description": "Owner Identifier",
+                        "type": "string"
+                    },
+                    "parent_id": {
+                        "description": "Parent Identifier",
+                        "type": "string"
+                    },
+                    "priority": {
+                        "description": "Completed",
+                        "type": "boolean"
+                    },
+                    "publicly_visible": {
+                        "description": "Publicly visible",
+                        "type": "boolean"
+                    },
+                    "reminder_date": {
+                        "description": "Remainder Date",
+                        "type": "string"
+                    },
+                    "reporter_id": {
+                        "description": "Reporter Identifier",
+                        "type": "string"
+                    },
+                    "start_date": {
+                        "description": "Start Date",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status",
+                        "type": "string"
+                    },
+                    "updated_date": {
+                        "description": "Updated Date",
+                        "type": "string"
+                    }
+                }
+            },
+            "TaskCreated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "TaskUpdate": {
+                "type": "object",
+                "properties": {
+                    "account_id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "assigned_user_id": {
+                        "description": "Assigned User Identifier",
+                        "type": "string"
+                    },
+                    "contact": {
+                        "description": "Contact",
+                        "type": "string"
+                    },
+                    "contact_id": {
+                        "description": "Contact Identifier",
+                        "type": "string"
+                    },
+                    "created_date": {
+                        "description": "Created Date",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "due_date": {
+                        "description": "Due Date",
+                        "type": "string"
+                    },
+                    "lead_id": {
+                        "description": "Lead Identifier",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name",
+                        "type": "string"
+                    },
+                    "opportunity": {
+                        "description": "Opportunity",
+                        "type": "string"
+                    },
+                    "opportunity_id": {
+                        "description": "Opportunity Identifier",
+                        "type": "string"
+                    },
+                    "owner": {
+                        "description": "Owner",
+                        "type": "string"
+                    },
+                    "owner_id": {
+                        "description": "Owner Identifier",
+                        "type": "string"
+                    },
+                    "parent_id": {
+                        "description": "Parent Identifier",
+                        "type": "string"
+                    },
+                    "priority": {
+                        "description": "Completed",
+                        "type": "boolean"
+                    },
+                    "publicly_visible": {
+                        "description": "Publicly visible",
+                        "type": "boolean"
+                    },
+                    "reminder_date": {
+                        "description": "Remainder Date",
+                        "type": "string"
+                    },
+                    "reporter_id": {
+                        "description": "Reporter Identifier",
+                        "type": "string"
+                    },
+                    "start_date": {
+                        "description": "Start Date",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status",
+                        "type": "string"
+                    },
+                    "updated_date": {
+                        "description": "Updated Date",
+                        "type": "string"
+                    }
+                }
+            },
+            "TaskUpdated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "User": {
+                "type": "object",
+                "properties": {
+                    "embedded": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    },
+                    "relation": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "UserCreate": {
+                "type": "object",
+                "properties": {
+                    "address_city": {
+                        "description": "Address City",
+                        "type": "string"
+                    },
+                    "address_country": {
+                        "description": "Address Country",
+                        "type": "string"
+                    },
+                    "address_postal_code": {
+                        "description": "Address postal code",
+                        "type": "string"
+                    },
+                    "address_state": {
+                        "description": "Address State",
+                        "type": "string"
+                    },
+                    "address_street": {
+                        "description": "Address Street",
+                        "type": "string"
+                    },
+                    "confirm_password": {
+                        "description": "Confirm password",
+                        "type": "string"
+                    },
+                    "created_by": {
+                        "description": "Created by",
+                        "type": "string"
+                    },
+                    "department": {
+                        "description": "Department",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Email",
+                        "type": "string"
+                    },
+                    "email_other": {
+                        "description": "Email Other",
+                        "type": "string"
+                    },
+                    "firstname": {
+                        "description": "First name",
+                        "type": "string"
+                    },
+                    "fullname": {
+                        "description": "Full name",
+                        "type": "string"
+                    },
+                    "is_active": {
+                        "description": "Is active",
+                        "type": "boolean"
+                    },
+                    "is_admin": {
+                        "description": "Is admin",
+                        "type": "boolean"
+                    },
+                    "lastname": {
+                        "description": "Last name",
+                        "type": "string"
+                    },
+                    "modified_by": {
+                        "description": "Modified by",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name",
+                        "type": "string"
+                    },
+                    "phone_home": {
+                        "description": "Phone Home",
+                        "type": "string"
+                    },
+                    "phone_mobile": {
+                        "description": "Phone Mobile",
+                        "type": "string"
+                    },
+                    "phone_other": {
+                        "description": "Phone Other",
+                        "type": "string"
+                    },
+                    "phone_work": {
+                        "description": "Phone Work",
+                        "type": "string"
+                    },
+                    "position": {
+                        "description": "Position",
+                        "type": "string"
+                    },
+                    "role": {
+                        "description": "Role",
+                        "type": "string"
+                    },
+                    "roleid": {
+                        "description": "Role ID",
+                        "type": "string"
+                    },
+                    "signature": {
+                        "description": "Signature",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "Title",
+                        "type": "string"
+                    },
+                    "user_password": {
+                        "description": "User password",
+                        "type": "string"
+                    },
+                    "website": {
+                        "description": "Website",
+                        "type": "string"
+                    }
+                }
+            },
+            "UserCreated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "UserUpdate": {
+                "type": "object",
+                "properties": {
+                    "address_city": {
+                        "description": "Address City",
+                        "type": "string"
+                    },
+                    "address_country": {
+                        "description": "Address Country",
+                        "type": "string"
+                    },
+                    "address_postal_code": {
+                        "description": "Address postal code",
+                        "type": "string"
+                    },
+                    "address_state": {
+                        "description": "Address State",
+                        "type": "string"
+                    },
+                    "address_street": {
+                        "description": "Address Street",
+                        "type": "string"
+                    },
+                    "confirm_password": {
+                        "description": "Confirm password",
+                        "type": "string"
+                    },
+                    "created_by": {
+                        "description": "Created by",
+                        "type": "string"
+                    },
+                    "department": {
+                        "description": "Department",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Email",
+                        "type": "string"
+                    },
+                    "email_other": {
+                        "description": "Email Other",
+                        "type": "string"
+                    },
+                    "firstname": {
+                        "description": "First name",
+                        "type": "string"
+                    },
+                    "fullname": {
+                        "description": "Full name",
+                        "type": "string"
+                    },
+                    "is_active": {
+                        "description": "Is active",
+                        "type": "boolean"
+                    },
+                    "is_admin": {
+                        "description": "Is admin",
+                        "type": "boolean"
+                    },
+                    "lastname": {
+                        "description": "Last name",
+                        "type": "string"
+                    },
+                    "modified_by": {
+                        "description": "Modified by",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name",
+                        "type": "string"
+                    },
+                    "phone_home": {
+                        "description": "Phone Home",
+                        "type": "string"
+                    },
+                    "phone_mobile": {
+                        "description": "Phone Mobile",
+                        "type": "string"
+                    },
+                    "phone_other": {
+                        "description": "Phone Other",
+                        "type": "string"
+                    },
+                    "phone_work": {
+                        "description": "Phone Work",
+                        "type": "string"
+                    },
+                    "position": {
+                        "description": "Position",
+                        "type": "string"
+                    },
+                    "role": {
+                        "description": "Role",
+                        "type": "string"
+                    },
+                    "roleid": {
+                        "description": "Role ID",
+                        "type": "string"
+                    },
+                    "signature": {
+                        "description": "Signature",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "Title",
+                        "type": "string"
+                    },
+                    "user_password": {
+                        "description": "User password",
+                        "type": "string"
+                    },
+                    "website": {
+                        "description": "Website",
+                        "type": "string"
+                    }
+                }
+            },
+            "UserUpdated": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Account Identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "embedded": {
+                "type": "object"
+            },
+            "relation": {
+                "type": "object"
+            },
+            "select": {
+                "type": "array"
+            },
+            "schema": {
+                "type": "object"
+            }
+        }
+    }
+}
