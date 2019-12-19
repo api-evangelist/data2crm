@@ -1,0 +1,57 @@
+{
+    "name": "Data2CRM",
+    "description": "<p>Data2CRM is all-in-one master touch instrument to create the perfect data environment for prosperous internal and external connections.&nbsp;<span>Data2CRM.API, a Unified API Provider, to Connect Your Business Software with 17+ CRMs.<\/span><\/p>",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/data2crm-logo.png",
+    "tags": [
+        "api provider",
+        "crm",
+        "have api",
+        "have swagger",
+        "migrations",
+        "relative data",
+        "service api"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/data2crm\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Data2CRM.API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/data2crm-logo.png",
+            "humanURL": "http:\/\/data2crm.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/data2crm-api.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/data2crm-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/data2crm-api-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28573-2019-09-03-23-25-53.json"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/data2crm"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/data2crm.com"
+        }
+    ]
+}
